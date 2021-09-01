@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaftySwitch", "MaftySwitch.csproj", "{CFFE1A76-D01C-4DDC-8C8E-B107B3171E62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFFE1A76-D01C-4DDC-8C8E-B107B3171E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFE1A76-D01C-4DDC-8C8E-B107B3171E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFE1A76-D01C-4DDC-8C8E-B107B3171E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFE1A76-D01C-4DDC-8C8E-B107B3171E62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D20AAD43-5093-470B-86EE-2FC4E0372063}
+	EndGlobalSection
+EndGlobal
