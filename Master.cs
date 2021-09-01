@@ -14,6 +14,7 @@ namespace MaftySwitch
     public partial class Master : Form
     {
         public static Master master = null;
+        private Bitmap gaw,lane,maf;
 
         public Master()
         {
@@ -24,7 +25,7 @@ namespace MaftySwitch
         private void Master_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = this.BackColor;
-
+/*
             GawBox.ImageLocation = @".\src\gaw.png";
             GawBox.SizeMode = PictureBoxSizeMode.Normal;
 
@@ -32,9 +33,9 @@ namespace MaftySwitch
             MafBox.SizeMode = PictureBoxSizeMode.Normal;
 
             LaneBox.ImageLocation = @".\src\lane.png";
-            LaneBox.SizeMode = PictureBoxSizeMode.Normal;
+            LaneBox.SizeMode = PictureBoxSizeMode.Normal;*/
 
-            GawBox.Location = new Point(GawBox.Location.X + 1, GawBox.Location.Y);
+            //GawBox.Location = new Point(GawBox.Location.X + 1, GawBox.Location.Y);
 
         }
 
@@ -50,7 +51,25 @@ namespace MaftySwitch
 
         private void Master_Shown(object sender, EventArgs e)
         {
-            MaftySwitch.Move.moveGaw();
+            
+        }
+
+        private void GawBox_Paint(object sender, PaintEventArgs e)
+        {
+            this.gaw = new Bitmap(@".\src\gaw.png");
+            e.Graphics.DrawImage(this.gaw, new Point(0,0));
+        }
+
+        private void LaneBox_Paint(object sender, PaintEventArgs e)
+        {
+            this.lane = new Bitmap(@".\src\lane.png");
+            e.Graphics.DrawImage(this.lane, new Point(0,0));
+        }
+
+        private void MafBox_Paint(object sender, PaintEventArgs e)
+        {
+            this.maf = new Bitmap(@".\src\maf.png");
+            e.Graphics.DrawImage(this.maf, new Point(0,0));
         }
     }
 }
