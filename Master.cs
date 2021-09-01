@@ -14,6 +14,7 @@ namespace MaftySwitch
     public partial class Master : Form
     {
         public static Master master = null;
+        private Bitmap bmp;
 
         public Master()
         {
@@ -25,22 +26,15 @@ namespace MaftySwitch
         {
             this.TransparencyKey = this.BackColor;
 
-            GawBox.ImageLocation = @".\src\gaw.png";
-            GawBox.SizeMode = PictureBoxSizeMode.Normal;
-
-            MafBox.ImageLocation = @".\src\maf.png";
-            MafBox.SizeMode = PictureBoxSizeMode.Normal;
-
-            LaneBox.ImageLocation = @".\src\lane.png";
-            LaneBox.SizeMode = PictureBoxSizeMode.Normal;
-
-            GawBox.Location = new Point(GawBox.Location.X + 1, GawBox.Location.Y);
+            bmp = new Bitmap(@".\src\maf.gif");
+            //bmp.MakeTransparent();
+            picBox.Image = bmp;
 
         }
 
         public PictureBox getGawBox()
         {
-            return this.GawBox;
+            return this.picBox;
         }
 
         private void Master_Activated(object sender, EventArgs e)
