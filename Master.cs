@@ -27,8 +27,8 @@ namespace MaftySwitch
             this.TransparencyKey = this.BackColor;
 
             bmp = new Bitmap(@".\src\maf.gif");
-            //bmp.MakeTransparent();
             picBox.Image = bmp;
+            bmp.MakeTransparent();
 
         }
 
