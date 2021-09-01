@@ -32,7 +32,7 @@
             this.GawBox = new System.Windows.Forms.PictureBox();
             this.LaneBox = new System.Windows.Forms.PictureBox();
             this.MafBox = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GawBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LaneBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MafBox)).BeginInit();
@@ -65,6 +65,12 @@
             this.MafBox.TabStop = false;
             this.MafBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MafBox_Paint);
             // 
+            // updateTimer
+            // 
+            this.updateTimer.Enabled = true;
+            this.updateTimer.Interval = 10;
+            this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
+            // 
             // Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -91,7 +97,7 @@
         private System.Windows.Forms.PictureBox GawBox;
         private System.Windows.Forms.PictureBox LaneBox;
         private System.Windows.Forms.PictureBox MafBox;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer updateTimer;
     }
 }
 

@@ -25,17 +25,10 @@ namespace MaftySwitch
         private void Master_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = this.BackColor;
-/*
-            GawBox.ImageLocation = @".\src\gaw.png";
-            GawBox.SizeMode = PictureBoxSizeMode.Normal;
 
-            MafBox.ImageLocation = @".\src\maf.png";
-            MafBox.SizeMode = PictureBoxSizeMode.Normal;
-
-            LaneBox.ImageLocation = @".\src\lane.png";
-            LaneBox.SizeMode = PictureBoxSizeMode.Normal;*/
-
-            //GawBox.Location = new Point(GawBox.Location.X + 1, GawBox.Location.Y);
+            GawBox.Location = new Point(GawBox.Location.X - 300, GawBox.Location.Y);
+            MafBox.Location = new Point(MafBox.Location.X + 500, MafBox.Location.Y);
+            LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + 1080);
 
         }
 
@@ -70,6 +63,21 @@ namespace MaftySwitch
         {
             this.maf = new Bitmap(@".\src\maf.png");
             e.Graphics.DrawImage(this.maf, new Point(0,0));
+        }
+
+        private void updateTimer_Tick(object sender, EventArgs e)
+        {
+            if(GawBox.Location.X < 70)
+            {
+                GawBox.Location = new Point(GawBox.Location.X + 10, GawBox.Location.Y);
+            }else if(MafBox.Location.X > 1350)
+            {
+                MafBox.Location = new Point(MafBox.Location.X - 15, MafBox.Location.Y);
+            }else if(LaneBox.Location.Y > 80)
+            {
+                LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y - 40);
+            }
+
         }
     }
 }
