@@ -18,6 +18,7 @@ namespace MaftySwitch
         private System.Media.SoundPlayer gawW, laneW, mafW;
         private bool SgawW, SlaneW, SmafW,Sdan;
         private int time = 0;
+        private Dance dance;
 
         public Master()
         {
@@ -128,10 +129,16 @@ namespace MaftySwitch
                 MafBox.Dispose();
                 GawBox.Dispose();
                 LaneBox.Dispose();
+
+                gawW.Dispose();
+                mafW.Dispose();
+                laneW.Dispose();
+
                 if (!Sdan)
                 {
-                    /*dance.Show();
-                    Sdan = true;*/
+                    dance = new Dance();
+                    dance.Show();
+                    Sdan = true;
                 }
                 time++;
             }
