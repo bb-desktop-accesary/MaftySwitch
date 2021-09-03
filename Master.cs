@@ -16,7 +16,7 @@ namespace MaftySwitch
         public static Master master = null;
         private Bitmap gaw,lane,maf;
         private System.Media.SoundPlayer gawW, laneW, mafW;
-        private bool SgawW, SlaneW, SmafW;
+        private bool SgawW, SlaneW, SmafW,Sdan;
         private int time = 0;
 
         public Master()
@@ -25,13 +25,22 @@ namespace MaftySwitch
             master = this;
         }
 
+        private void Master_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+        }
+
+        private void Master_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
         private void Master_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = this.BackColor;
-            this.SgawW = this.SlaneW = this.SmafW = false;
+            this.SgawW = this.SlaneW = this.SmafW = this.Sdan =false;
 
             GawBox.Location = new Point(GawBox.Location.X - 300, GawBox.Location.Y);
-            MafBox.Location = new Point(MafBox.Location.X + 500, MafBox.Location.Y);
+            MafBox.Location = new Point(MafBox.Location.X + 600, MafBox.Location.Y);
             LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + 1080);
 
             gawW = new System.Media.SoundPlayer(@".\src\gaw.wav");
@@ -114,11 +123,17 @@ namespace MaftySwitch
             {
                 time++;
             }
-            else
+            else if(time == 270)
             {
                 MafBox.Dispose();
                 GawBox.Dispose();
                 LaneBox.Dispose();
+                if (!Sdan)
+                {
+                    /*dance.Show();
+                    Sdan = true;*/
+                }
+                time++;
             }
 
         }

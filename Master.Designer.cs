@@ -83,6 +83,8 @@
             this.Name = "Master";
             this.Text = "Master";
             this.Activated += new System.EventHandler(this.Master_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Master_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Master_FormClosed);
             this.Load += new System.EventHandler(this.Master_Load);
             this.Shown += new System.EventHandler(this.Master_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.GawBox)).EndInit();
