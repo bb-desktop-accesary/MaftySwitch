@@ -90,7 +90,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="7z\Release.7z" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +115,9 @@
     <Content Include="src\maf.wav" />
     <Content Include="src\mafty.png" />
     <Content Include="src\senkou.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="7z\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
