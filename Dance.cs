@@ -66,5 +66,17 @@ namespace MaftySwitch
                 Application.Exit();
             }
         }
+
+        private void MaftyLogoBox_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(new Bitmap(@".\src\mafty.png"), new Point(0, 0));
+        }
+
+        private void TitleBox_Paint(object sender, PaintEventArgs e)
+        {
+            TitleBox.BackColor = Color.Transparent;
+            TitleBox.Parent = DanceBox;
+            e.Graphics.DrawImage(new Bitmap(@".\src\hasawei_.png"), new Point(0, 0));
+        }
     }
 }
