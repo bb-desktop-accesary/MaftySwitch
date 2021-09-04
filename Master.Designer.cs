@@ -40,27 +40,39 @@
             // 
             // GawBox
             // 
+            this.GawBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GawBox.Location = new System.Drawing.Point(72, 12);
             this.GawBox.Name = "GawBox";
             this.GawBox.Size = new System.Drawing.Size(600, 1080);
+            this.GawBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.GawBox.TabIndex = 0;
             this.GawBox.TabStop = false;
             this.GawBox.Paint += new System.Windows.Forms.PaintEventHandler(this.GawBox_Paint);
             // 
             // LaneBox
             // 
+            this.LaneBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LaneBox.Location = new System.Drawing.Point(580, 75);
             this.LaneBox.Name = "LaneBox";
             this.LaneBox.Size = new System.Drawing.Size(600, 1080);
+            this.LaneBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.LaneBox.TabIndex = 1;
             this.LaneBox.TabStop = false;
             this.LaneBox.Paint += new System.Windows.Forms.PaintEventHandler(this.LaneBox_Paint);
             // 
             // MafBox
             // 
+            this.MafBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MafBox.Location = new System.Drawing.Point(1349, 75);
             this.MafBox.Name = "MafBox";
             this.MafBox.Size = new System.Drawing.Size(600, 1080);
+            this.MafBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.MafBox.TabIndex = 2;
             this.MafBox.TabStop = false;
             this.MafBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MafBox_Paint);
@@ -87,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LaneBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MafBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
