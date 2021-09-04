@@ -26,15 +26,6 @@ namespace MaftySwitch
             master = this;
         }
 
-        private void Master_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
-        }
-
-        private void Master_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
         private void Master_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = this.BackColor;
@@ -56,16 +47,6 @@ namespace MaftySwitch
         public PictureBox getGawBox()
         {
             return this.GawBox;
-        }
-
-        private void Master_Activated(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Master_Shown(object sender, EventArgs e)
-        {
-            
         }
 
         private void GawBox_Paint(object sender, PaintEventArgs e)
