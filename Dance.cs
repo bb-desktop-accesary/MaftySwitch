@@ -35,6 +35,9 @@ namespace MaftySwitch
         private void Dance_Load(object sender, EventArgs e)
         {
             this.TransparencyKey = this.BackColor;
+            this.Width = Screen.GetBounds(this).Width;
+            this.Height = Screen.GetBounds(this).Height;
+
             UpdateTimer.Enabled = true;
             img = new Bitmap(@".\src\dance_only.gif");
 

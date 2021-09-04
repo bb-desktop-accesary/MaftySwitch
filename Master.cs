@@ -31,6 +31,9 @@ namespace MaftySwitch
             this.TransparencyKey = this.BackColor;
             this.SgawW = this.SlaneW = this.SmafW = this.Sdan =false;
 
+            this.Width = Screen.GetBounds(this).Width;
+            this.Height = Screen.GetBounds(this).Height;
+
             GawBox.Location = new Point(GawBox.Location.X - 300, GawBox.Location.Y);
             MafBox.Location = new Point(MafBox.Location.X + 600, MafBox.Location.Y);
             LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + 1080);
