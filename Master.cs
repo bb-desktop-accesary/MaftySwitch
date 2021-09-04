@@ -44,11 +44,11 @@ namespace MaftySwitch
             MafBox.Location = new Point(MafBox.Location.X + 600, MafBox.Location.Y);
             LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + 1080);
 
-            gawW = new System.Media.SoundPlayer(@".\src\gaw_.wav");
+            gawW = new System.Media.SoundPlayer(@".\src\gaw.wav");
             gawW.Load();
-            mafW = new System.Media.SoundPlayer(@".\src\maf_.wav");
+            mafW = new System.Media.SoundPlayer(@".\src\maf.wav");
             mafW.Load();
-            laneW = new System.Media.SoundPlayer(@".\src\lane_.wav");
+            laneW = new System.Media.SoundPlayer(@".\src\lane.wav");
             laneW.Load();
 
         }
