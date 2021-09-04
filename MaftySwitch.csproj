@@ -105,9 +105,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\maf.png" />
+    <Content Include="src\dance_only.gif" />
     <Content Include="src\gaw.png" />
+    <Content Include="src\gaw.wav" />
+    <Content Include="src\hasawei.png" />
     <Content Include="src\lane.png" />
+    <Content Include="src\lane.wav" />
+    <Content Include="src\maf.png" />
+    <Content Include="src\maf.wav" />
+    <Content Include="src\mafty.png" />
+    <Content Include="src\senkou.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

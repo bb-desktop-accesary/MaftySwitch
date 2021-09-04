@@ -36,7 +36,7 @@ namespace MaftySwitch
         {
             this.TransparencyKey = this.BackColor;
             UpdateTimer.Enabled = true;
-            img = new Bitmap(@".\src\dance_only_H_____.gif");
+            img = new Bitmap(@".\src\dance_only.gif");
 
             DanceBox.Image = img;
 
@@ -76,7 +76,7 @@ namespace MaftySwitch
         {
             TitleBox.BackColor = Color.Transparent;
             TitleBox.Parent = DanceBox;
-            e.Graphics.DrawImage(new Bitmap(@".\src\hasawei_.png"), new Point(0, 0));
+            e.Graphics.DrawImage(new Bitmap(@".\src\hasawei.png"), new Point(0, 0));
         }
     }
 }
