@@ -44,7 +44,9 @@ namespace MaftySwitch
             mafW.Load();
             laneW = new System.Media.SoundPlayer(@".\src\lane.wav");
             laneW.Load();
-
+            this.gaw = new Bitmap(@".\src\gaw.png");
+            this.lane = new Bitmap(@".\src\lane.png");
+            this.maf = new Bitmap(@".\src\maf.png");
         }
 
         public PictureBox getGawBox()
@@ -54,19 +56,16 @@ namespace MaftySwitch
 
         private void GawBox_Paint(object sender, PaintEventArgs e)
         {
-            this.gaw = new Bitmap(@".\src\gaw.png");
             e.Graphics.DrawImage(this.gaw, new Point(0,0));
         }
 
         private void LaneBox_Paint(object sender, PaintEventArgs e)
         {
-            this.lane = new Bitmap(@".\src\lane.png");
             e.Graphics.DrawImage(this.lane, new Point(0,0));
         }
 
         private void MafBox_Paint(object sender, PaintEventArgs e)
         {
-            this.maf = new Bitmap(@".\src\maf.png");
             e.Graphics.DrawImage(this.maf, new Point(0,0));
         }
 
