@@ -28,6 +28,17 @@ namespace MaftySwitch
 
             /*比率計算*/
             this.pixRai = new Ratio(Screen.GetBounds(this).Width);
+
+            //set form size
+            this.Width = this.pixRai.calcLength(1920);
+            this.Height = this.pixRai.calcLength(1080);
+            //set form location
+            this.Location = new Point(0, Screen.GetBounds(this).Height - this.Height);
+
+            //set box size and location
+            this.pixRai.BoxAdjustSize(this.GawBox);
+            this.pixRai.BoxAdjustSize(this.LaneBox);
+            this.pixRai.BoxAdjustSize(this.MafBox);
         }
 
         private void Master_Load(object sender, EventArgs e)
@@ -38,9 +49,9 @@ namespace MaftySwitch
             this.Width = Screen.GetBounds(this).Width;
             this.Height = Screen.GetBounds(this).Height;
 
-            GawBox.Location = new Point(GawBox.Location.X - 300, GawBox.Location.Y);
-            MafBox.Location = new Point(MafBox.Location.X + 600, MafBox.Location.Y);
-            LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + 1080);
+            GawBox.Location = new Point(GawBox.Location.X - this.pixRai.calcLength(300), GawBox.Location.Y);
+            MafBox.Location = new Point(MafBox.Location.X + this.pixRai.calcLength(600), MafBox.Location.Y);
+            LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y + this.pixRai.calcLength(1080));
 
             gawW = new System.Media.SoundPlayer(@".\src\gaw.wav");
             gawW.Load();
@@ -51,6 +62,10 @@ namespace MaftySwitch
             this.gaw = new Bitmap(@".\src\gaw.png");
             this.lane = new Bitmap(@".\src\lane.png");
             this.maf = new Bitmap(@".\src\maf.png");
+
+            this.GawBox.Image = this.gaw;
+            this.MafBox.Image = this.maf;
+            this.LaneBox.Image = this.lane;
 
             updateTimer.Enabled = true;
         }
@@ -77,9 +92,9 @@ namespace MaftySwitch
 
         private void updateTimer_Tick(object sender, EventArgs e)
         {
-            if (GawBox.Location.X < 70)
+            if (GawBox.Location.X < this.pixRai.calcLength(70))
             {
-                GawBox.Location = new Point(GawBox.Location.X + 10, GawBox.Location.Y);
+                GawBox.Location = new Point(GawBox.Location.X + this.pixRai.calcLength(10), GawBox.Location.Y);
                 if (!SgawW)
                 {
                     gawW.Play();
@@ -89,9 +104,9 @@ namespace MaftySwitch
             {
                 time++;
             }
-            else if (MafBox.Location.X > 1490)
+            else if (MafBox.Location.X > this.pixRai.calcLength(1490))
             {
-                MafBox.Location = new Point(MafBox.Location.X - 15, MafBox.Location.Y);
+                MafBox.Location = new Point(MafBox.Location.X - this.pixRai.calcLength(15), MafBox.Location.Y);
                 if (!SmafW)
                 {
                     mafW.Play();
@@ -101,9 +116,9 @@ namespace MaftySwitch
             {
                 time++;
             }
-            else if (LaneBox.Location.Y > 80)
+            else if (LaneBox.Location.Y  > this.pixRai.calcLength(80))
             {
-                LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y - 40);
+                LaneBox.Location = new Point(LaneBox.Location.X, LaneBox.Location.Y - this.pixRai.calcLength(40));
                 if (!SlaneW)
                 {
                     laneW.Play();

@@ -18,15 +18,15 @@ namespace MaftySwitch
         //コンストラクタ
         public Ratio(int screenW)
         {
-            rat = /*0.7125f*/(float)screenW / def_W;
+            rat = 0.7125f/*(float)screenW / def_W*/;
 
             //debug
-            if (flag)
+            /*if (flag)
             {
                 System.Windows.Forms.MessageBox.Show("width : " + screenW);
                 System.Windows.Forms.MessageBox.Show("ratio : " + rat);
                 flag = false;
-            }
+            }*/
 
             pixRai = this;
         }
@@ -38,9 +38,19 @@ namespace MaftySwitch
             length = (int)(oriLength * rat);
 
             //debug
-            System.Windows.Forms.MessageBox.Show("oriL * rat = " + length);
+            /*System.Windows.Forms.MessageBox.Show("oriL * rat = " + length);*/
 
             return length;
+        }
+
+        public void BoxAdjustSize(System.Windows.Forms.PictureBox box)
+        {
+            //System.Windows.Forms.MessageBox.Show("box width = " + box.Width); //debug
+            box.Width = this.calcLength(box.Width);
+            //System.Windows.Forms.MessageBox.Show("box height = " + box.Height); //debug
+            box.Height = this.calcLength(box.Height);
+            //System.Windows.Forms.MessageBox.Show("box point = " + box.Location.X + "," + box.Location.Y); //debug
+            box.Location = new System.Drawing.Point(this.calcLength(box.Location.X), this.calcLength(box.Location.Y));
         }
     }
 }

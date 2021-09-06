@@ -28,24 +28,24 @@ namespace MaftySwitch
             /*比率設定*/
 
             //form
-            MessageBox.Show("defolt width = " + 1920);
+            //MessageBox.Show("defolt width = " + 1920);
             this.Width = this.pixRai.calcLength(1920);
-            MessageBox.Show("defolt height = " + 1080);
+            //MessageBox.Show("defolt height = " + 1080);
             this.Height = this.pixRai.calcLength(1080);
 
             this.Location = new Point(0, Screen.GetBounds(this).Height - this.Height);
 
             //dance
-            MessageBox.Show("DanceBox");
-            this.BoxAdjustSize(DanceBox);
+            //MessageBox.Show("DanceBox"); //debug
+            this.pixRai.BoxAdjustSize(DanceBox);
 
             //logo
-            MessageBox.Show("MaftyLogoBox");
-            this.BoxAdjustSize(MaftyLogoBox);
+            //MessageBox.Show("MaftyLogoBox"); //debug
+            this.pixRai.BoxAdjustSize(MaftyLogoBox);
 
             //title
-            MessageBox.Show("TitleBox");
-            this.BoxAdjustSize(TitleBox);
+            //MessageBox.Show("TitleBox"); //debug
+            this.pixRai.BoxAdjustSize(TitleBox);
         }
         private void Dance_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,7 @@ namespace MaftySwitch
             player = new SoundPlayer(@".\src\senkou.wav");
             player.Load();
         }
-
+        // このアクションがあると別枠に入れ始める。
         /*private void DanceBox_Paint(object sender, PaintEventArgs e)
         {
             ImageAnimator.UpdateFrames(img);
@@ -113,7 +113,7 @@ namespace MaftySwitch
             TitleBox.Parent = DanceBox;
         }
 
-        //Adjust Size PictureBoxes
+        /*//Adjust Size PictureBoxes
         private void BoxAdjustSize(PictureBox box)
         {
             MessageBox.Show("box width = " + box.Width); //debug
@@ -122,6 +122,6 @@ namespace MaftySwitch
             box.Height = this.pixRai.calcLength(box.Height);
             MessageBox.Show("box point = " + box.Location.X + "," + box.Location.Y);
             box.Location = new Point(this.pixRai.calcLength(box.Location.X), this.pixRai.calcLength(box.Location.Y));
-        }
+        }*/
     }
 }
