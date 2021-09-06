@@ -13,17 +13,21 @@ namespace MaftySwitch
 {
     public partial class Master : Form
     {
-        public static Master master = null;
         private Bitmap gaw,lane,maf;
         private System.Media.SoundPlayer gawW, laneW, mafW;
         private bool SgawW, SlaneW, SmafW,Sdan;
         private int time = 0;
         private Dance dance;
 
+        private Ratio pixRai;
+
         public Master()
         {
             InitializeComponent();
-            master = this;
+            this.pixRai = Ratio.pixRai;
+
+            /*比率計算*/
+            this.pixRai = new Ratio(Screen.GetBounds(this).Width);
         }
 
         private void Master_Load(object sender, EventArgs e)
@@ -47,6 +51,8 @@ namespace MaftySwitch
             this.gaw = new Bitmap(@".\src\gaw.png");
             this.lane = new Bitmap(@".\src\lane.png");
             this.maf = new Bitmap(@".\src\maf.png");
+
+            updateTimer.Enabled = true;
         }
 
         public PictureBox getGawBox()
@@ -83,7 +89,7 @@ namespace MaftySwitch
             {
                 time++;
             }
-            else if (MafBox.Location.X > 1350)
+            else if (MafBox.Location.X > 1490)
             {
                 MafBox.Location = new Point(MafBox.Location.X - 15, MafBox.Location.Y);
                 if (!SmafW)
@@ -119,10 +125,11 @@ namespace MaftySwitch
 
                 if (!Sdan)
                 {
+                    Sdan = true;
                     dance = new Dance();
                     dance.Show();
-                    Sdan = true;
                 }
+
                 time++;
             }
 

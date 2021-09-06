@@ -15,40 +15,76 @@ namespace MaftySwitch
     {
         private Bitmap img;
         private SoundPlayer player;
+        //timer
         private int time = 0;
+        private Ratio pixRai;
+
         public Dance()
         {
             InitializeComponent();
+
+            this.pixRai = Ratio.pixRai;
+
+            /*比率設定*/
+
+            //form
+            MessageBox.Show("defolt width = " + 1920);
+            this.Width = this.pixRai.calcLength(1920);
+            MessageBox.Show("defolt height = " + 1080);
+            this.Height = this.pixRai.calcLength(1080);
+
+            this.Location = new Point(0, Screen.GetBounds(this).Height - this.Height);
+
+            //dance
+            MessageBox.Show("DanceBox");
+            this.BoxAdjustSize(DanceBox);
+
+            //logo
+            MessageBox.Show("MaftyLogoBox");
+            this.BoxAdjustSize(MaftyLogoBox);
+
+            //title
+            MessageBox.Show("TitleBox");
+            this.BoxAdjustSize(TitleBox);
+        }
+        private void Dance_Load(object sender, EventArgs e)
+        {
+            //初期設定
+            //透明化
+            this.TransparencyKey = this.BackColor;
+
+            //set up timer
+            UpdateTimer.Enabled = true;
+
+            //set images size
+
+
+            //set dance
+            img = new Bitmap(@".\src\dance_only.gif");
+            DanceBox.Image = img;
+
+            //set png
+            MaftyLogoBox.Image = new Bitmap(@".\src\mafty.png");
+            TitleBox.Image = new Bitmap(@".\src\hasawei.png");
+
+            //move gif
+            //DanceBox.Paint += DanceBox_Paint;
+            ImageAnimator.Animate(img, new EventHandler(Image_FrameChanged));
+
+            //sound 
+            player = new SoundPlayer(@".\src\senkou.wav");
+            player.Load();
         }
 
-        private void DanceBox_Paint(object sender, PaintEventArgs e)
+        /*private void DanceBox_Paint(object sender, PaintEventArgs e)
         {
             ImageAnimator.UpdateFrames(img);
             e.Graphics.DrawImage(img, new Point(0, 0));
-        }
+        }*/
 
         private void Image_FrameChanged(object o, EventArgs e)
         {
             DanceBox.Invalidate();
-        }
-
-        private void Dance_Load(object sender, EventArgs e)
-        {
-            this.TransparencyKey = this.BackColor;
-            this.Width = Screen.GetBounds(this).Width;
-            this.Height = Screen.GetBounds(this).Height;
-
-            UpdateTimer.Enabled = true;
-            img = new Bitmap(@".\src\dance_only.gif");
-
-            DanceBox.Image = img;
-
-            DanceBox.Paint += DanceBox_Paint;
-
-            ImageAnimator.Animate(img, new EventHandler(Image_FrameChanged));
-
-            player = new SoundPlayer(@".\src\senkou.wav");
-            player.Load();
         }
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
@@ -70,16 +106,22 @@ namespace MaftySwitch
             }
         }
 
-        private void MaftyLogoBox_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(new Bitmap(@".\src\mafty.png"), new Point(0, 0));
-        }
-
+        //TitleBox
         private void TitleBox_Paint(object sender, PaintEventArgs e)
         {
             TitleBox.BackColor = Color.Transparent;
             TitleBox.Parent = DanceBox;
-            e.Graphics.DrawImage(new Bitmap(@".\src\hasawei.png"), new Point(0, 0));
+        }
+
+        //Adjust Size PictureBoxes
+        private void BoxAdjustSize(PictureBox box)
+        {
+            MessageBox.Show("box width = " + box.Width); //debug
+            box.Width = this.pixRai.calcLength(box.Width);
+            MessageBox.Show("box height = " + box.Height); //debug
+            box.Height = this.pixRai.calcLength(box.Height);
+            MessageBox.Show("box point = " + box.Location.X + "," + box.Location.Y);
+            box.Location = new Point(this.pixRai.calcLength(box.Location.X), this.pixRai.calcLength(box.Location.Y));
         }
     }
 }

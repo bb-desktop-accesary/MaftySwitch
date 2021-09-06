@@ -40,16 +40,12 @@
             // 
             // DanceBox
             // 
-            this.DanceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DanceBox.Location = new System.Drawing.Point(0, 0);
             this.DanceBox.Name = "DanceBox";
             this.DanceBox.Size = new System.Drawing.Size(1920, 1080);
-            this.DanceBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.DanceBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DanceBox.TabIndex = 1;
             this.DanceBox.TabStop = false;
-            this.DanceBox.Paint += new System.Windows.Forms.PaintEventHandler(this.DanceBox_Paint);
             // 
             // UpdateTimer
             // 
@@ -57,29 +53,22 @@
             // 
             // TitleBox
             // 
-            this.TitleBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleBox.Location = new System.Drawing.Point(492, 685);
             this.TitleBox.Name = "TitleBox";
             this.TitleBox.Size = new System.Drawing.Size(1048, 360);
-            this.TitleBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.TitleBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TitleBox.TabIndex = 2;
             this.TitleBox.TabStop = false;
             this.TitleBox.Paint += new System.Windows.Forms.PaintEventHandler(this.TitleBox_Paint);
             // 
             // MaftyLogoBox
             // 
-            this.MaftyLogoBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.MaftyLogoBox.Location = new System.Drawing.Point(1466, 12);
             this.MaftyLogoBox.Name = "MaftyLogoBox";
             this.MaftyLogoBox.Size = new System.Drawing.Size(442, 361);
-            this.MaftyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MaftyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MaftyLogoBox.TabIndex = 3;
             this.MaftyLogoBox.TabStop = false;
-            this.MaftyLogoBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MaftyLogoBox_Paint);
             // 
             // Dance
             // 
@@ -91,13 +80,13 @@
             this.Controls.Add(this.DanceBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Dance";
             this.Load += new System.EventHandler(this.Dance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DanceBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TitleBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaftyLogoBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
