@@ -18,7 +18,7 @@ namespace MaftySwitch
         //コンストラクタ
         public Ratio(int screenW)
         {
-            rat = 0.7125f/*(float)screenW / def_W*/;
+            rat = (float)screenW / def_W;
 
             //debug
             /*if (flag)
